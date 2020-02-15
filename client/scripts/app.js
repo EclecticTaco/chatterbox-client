@@ -22,6 +22,7 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
+      $('#chats').html('');
       MessagesView.render(data.results);
       callback();
     });

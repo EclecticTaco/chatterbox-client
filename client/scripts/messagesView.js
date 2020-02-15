@@ -13,6 +13,7 @@ var MessagesView = {
   },
 
   render: function(data) {
+    // /data.length
     for (var i = 0; i < data.length; i += 1) {
       if (data[i].text !== undefined) {
         var html = MessageView.render(data[i]);
