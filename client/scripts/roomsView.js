@@ -22,9 +22,15 @@ var RoomsView = {
       });
       $('select').append(rendered);
     });
+
+    // RoomsView.$select.on('click', RoomsView.render);
+
   },
 
   render: function() {
+    // event.preventDefault();
+
+    console.log(this.$select.val(), 'click!');
   }
 
 };
