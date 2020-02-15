@@ -8,7 +8,7 @@ var App = {
     App.username = window.location.search.substr(10);
 
     FormView.initialize();
-    RoomsView.initialize();
+    // RoomsView.initialize();
     MessagesView.initialize();
 
 
@@ -24,6 +24,7 @@ var App = {
       console.log(data);
       $('#chats').html('');
       MessagesView.render(data.results);
+      RoomsView.initialize(data.results);
       callback();
     });
   },
