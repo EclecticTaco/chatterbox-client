@@ -21,11 +21,14 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-      console.log(data);
+      // console.log(data);
       $('#chats').html('');
       MessagesView.render(data.results);
       RoomsView.initialize(data.results);
-      callback();
+      var filteredArray = callback(data.results);
+      if (filteredArray !== undefined) {
+        RoomsView.gatherArr(filteredArray);
+      }
     });
   },
 
